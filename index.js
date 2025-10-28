@@ -23,20 +23,31 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
+
+// User.updateOne({name: "Shiva"}, {age: 49})
+User.updateMany({ age : {$gt: 50} }, {age: 55})
+.then((res) => {
+    console.log(res);
+})
+.catch((err) => {
+    console.log(err);
+});
+
+
 // User.find({age: {$gt: 47} })
 // .then((res) => {
 //     console.log(res[0].name);
 // })
 
 // User.findOne({age: { $gt: 47 } })
-User.findOne({_id: '69008ec942fd4854768dc0ed'})
-.then((res) => {
-    console.log(res);
-})
+// User.findOne({_id: '69008ec942fd4854768dc0ed'})
+// .then((res) => {
+//     console.log(res);
+// })
 
-.catch((err) => {
-    console.log(err);
-});
+// .catch((err) => {
+//     console.log(err);
+// });
 
 // User.insertMany([
 //     {name: "Tony", email: "tony@gmail.com", age: 100},
