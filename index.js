@@ -24,14 +24,35 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 
 
-// User.updateOne({name: "Shiva"}, {age: 49})
-User.updateMany({ age : {$gt: 50} }, {age: 55})
+
+// User.deleteOne({name: "Tony"}).then((res) => {
+//     console.log(res);
+// });
+
+// User.deleteMany({ age: {$gt: 100} })
+// .then((res) => {
+//     console.log(res);
+// });
+
+User.findByIdAndDelete('69009710828d7d131c36ef1b')
 .then((res) => {
     console.log(res);
 })
-.catch((err) => {
-    console.log(err);
-});
+
+
+
+
+
+// User.updateOne({name: "Shiva"}, {age: 49})
+// User.updateMany({ age : {$gt: 50} }, {age: 55})
+// User.findOneAndUpdate({ name: "Vidyut"}, { age: 42}, {new : true})
+// .then((res) => {
+//     console.log(res);
+// })
+// .catch((err) => {
+//     console.log(err);
+// });
+
 
 
 // User.find({age: {$gt: 47} })
