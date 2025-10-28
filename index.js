@@ -23,17 +23,43 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
-const user2 = new User({
-    name: "Shiva",
-    email: "shiva@shiva.com",
-    age: 10000,
-});
+// User.find({age: {$gt: 47} })
+// .then((res) => {
+//     console.log(res[0].name);
+// })
 
-user2
-.save()
+// User.findOne({age: { $gt: 47 } })
+User.findOne({_id: '69008ec942fd4854768dc0ed'})
 .then((res) => {
     console.log(res);
 })
+
 .catch((err) => {
     console.log(err);
 });
+
+// User.insertMany([
+//     {name: "Tony", email: "tony@gmail.com", age: 100},
+//     {name: "Skot", email: "skot@gmail.com", age: 102},
+//     {name: "Vidyut", email: "vidyut@gmail.com", age: 120}
+// ]).then((res) => {
+//     console.log(res);
+// });
+
+// const user2 = new User({
+//     name: "Shiva",
+//     email: "shiva@shiva.com",
+//     age: 10000,
+// });
+
+// user2
+// .save()
+// .then((res) => {
+//     console.log(res);
+// })
+// .catch((err) => {
+//     console.log(err);
+// });
+
+
+
